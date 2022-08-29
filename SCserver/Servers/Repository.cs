@@ -14,7 +14,7 @@ namespace SCserver.Servers
 
         private IMongoCollection<userInfo> _collection => _database.GetCollection<userInfo>("userInfo");
             
-            //GetCollection<userInfo>("userInfo");
+           
 
         public Repository(
         IMongoDatabase db

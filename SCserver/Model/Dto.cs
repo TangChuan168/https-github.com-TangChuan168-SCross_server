@@ -10,5 +10,7 @@ namespace SCserver.Model
         public string firstName { get; set; }
         public string lastName { get; set; }
         public string dob { get; set; }
+
+        public bool IsExist { get; set; }
     }
 }

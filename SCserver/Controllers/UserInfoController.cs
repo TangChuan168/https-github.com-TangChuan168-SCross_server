@@ -27,8 +27,18 @@ namespace SCserver.Controllers
         [HttpPost("SearchUser")]
         public Dto SearchUser([FromBody] Inputs data)
         {
+            if (data == null)
+            {
+                var Nodata = new Dto() { IsExist = false };
+                return Nodata;
+            }
             var UserResult = _userServers.SearchUser(data.PolicyNumber);
-            var returnData = new Dto() { firstName = UserResult.firstName, lastName = UserResult.lastName, dob = UserResult.dataOfBirth };
+            if (UserResult == null)
+            {
+                var Nodata = new Dto() { IsExist = false };
+                return Nodata;
+            }
+            var returnData = new Dto() { firstName = UserResult.firstName, lastName = UserResult.lastName, dob = UserResult.dataOfBirth,IsExist = true };
             return returnData;
         }
 

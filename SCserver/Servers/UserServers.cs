@@ -19,7 +19,8 @@ namespace SCserver.Servers
 
         public userInfo SearchUser(string u1)
         {
-            return _repo.getUserBYnumber(u1);
+            return  _repo.getUserBYnumber(u1);
+           
             
         }
     }
